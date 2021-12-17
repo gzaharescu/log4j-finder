@@ -27,27 +27,7 @@ It's most likely not `log4j2` if the identified file path does not contain refer
 
 You can install log4j-finder using one of the following methods:
 
-### Using the release binary
 
-You can download the correct binary for your Operating System:
-
- * Windows latest: [log4j-finder.exe](https://github.com/fox-it/log4j-finder/releases/latest/download/log4j-finder.exe)
-   * This can trigger your AntiVirus due to it being a [PyInstaller](https://pyinstaller.readthedocs.io/en/stable/) executable. You can also generate the executable yourself, see "Generating log4j-finder executables" on how to do this.
- * Linux x86_64 latest: [log4j-finder](https://github.com/fox-it/log4j-finder/releases/latest/download/log4j-finder)
-
-If you are on Linux you can also download the latest release and run using one of the following ways:
-
-```bash
-curl -L https://github.com/fox-it/log4j-finder/releases/latest/download/log4j-finder -o log4j-finder
-chmod +x log4j-finder
-sudo ./log4j-finder
-```
-
-```bash
-wget https://github.com/fox-it/log4j-finder/releases/latest/download/log4j-finder -O log4j-finder
-chmod +x log4j-finder
-sudo ./log4j-finder
-```
 
 ### Using Python 3
 
@@ -70,12 +50,6 @@ sudo python3 log4j-finder.py
 ```
 
 ## Generating log4j-finder executables
-
-### Auto generated executables
-
-There is a [GitHub Action](https://github.com/fox-it/log4j-finder/blob/main/.github/workflows/pyinstaller.yaml) in the repository that automatically generates a Windows and Linux binary of the `log4j-finder.py` script using  [PyInstaller](https://pyinstaller.readthedocs.io/en/stable/) on every commit. The build artifacts of these workflow runs are used to attach to the [Releases](https://github.com/fox-it/log4j-finder/releases/) page.
-
-We are aware that some Anti Virus vendors don't like the Windows binaries, in that case we recommend using generating the executable yourself using the following steps.
 
 ### Generating the Windows executable
 
@@ -123,7 +97,7 @@ sudo apt install python3-pip git
 pip3 install --user pyinstaller
 
 # Git clone and build using PyInstaller
-git clone https://github.com/fox-it/log4j-finder
+git clone https://github.com/gzaharescu/log4j-finder
 cd log4j-finder
 ~/.local/bin/pyinstaller --onefile log4j-finder.spec
 
